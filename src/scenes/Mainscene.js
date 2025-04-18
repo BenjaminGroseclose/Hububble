@@ -1,7 +1,5 @@
 import Phaser from "phaser";
 
-import { io } from "socket.io-client";
-
 export default class MainScene extends Phaser.Scene {
   constructor() {
     super("MainScene");
