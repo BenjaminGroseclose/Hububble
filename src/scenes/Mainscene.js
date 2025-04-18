@@ -25,7 +25,7 @@ export default class MainScene extends Phaser.Scene {
 
     this.socket = io();
 
-    console.log(socket);
+    console.log(this.socket);
 
     scene.scene.launch("WaitingRoom", { socket: scene.socket });
 
