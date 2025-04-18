@@ -1,5 +1,7 @@
 import Phaser from "phaser";
 
+import { io } from "./../../server/index";
+
 export default class MainScene extends Phaser.Scene {
   constructor() {
     super("MainScene");

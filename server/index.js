@@ -10,7 +10,7 @@ const { Server } = require("socket.io");
 const PORT = process.env.PORT || 8080;
 const app = express();
 const server = http.createServer(app);
-const io = new Server(server);
+export const io = new Server(server);
 
 // Initialize Redis client
 const redisClient = createClient();
