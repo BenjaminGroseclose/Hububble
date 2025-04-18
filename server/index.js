@@ -5,12 +5,12 @@ const http = require("http");
 const morgan = require("morgan");
 const compression = require("compression");
 const { createClient } = require("redis");
-const { Server } = require("socket.io");
+const socketIo = require("socket.io");
 
 const PORT = process.env.PORT || 8080;
 const app = express();
 const server = http.createServer(app);
-export const io = new Server(server);
+const io = socketIo(server);
 
 // Initialize Redis client
 const redisClient = createClient();
@@ -22,7 +22,7 @@ redisClient.on("error", (err) => console.error("Redis Client Error", err));
   console.log("Connected to Redis");
 })();
 
-module.exports = { app, redisClient };
+module.exports = { app, redisClient, io };
 
 const createApp = () => {
   //Set up logging middleware
