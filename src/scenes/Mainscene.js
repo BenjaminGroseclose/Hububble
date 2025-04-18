@@ -24,8 +24,11 @@ export default class MainScene extends Phaser.Scene {
     this.add.image(100, 75, "mainroom");
 
     this.socket = io(
-      "https://agreeable-flower-06f64ce0f.6.azurestaticapps.net"
-    ); // Replace with your server URL;
+      "https://agreeable-flower-06f64ce0f.6.azurestaticapps.net",
+      {
+        transports: ["websocket"],
+      }
+    );
 
     console.log(this.socket);
 
